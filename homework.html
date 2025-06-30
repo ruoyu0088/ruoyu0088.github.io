@@ -133,6 +133,7 @@ window.Quarto = {
   <li><a href="#相関係数" id="toc-相関係数" class="nav-link" data-scroll-target="#相関係数">相関係数</a></li>
   <li><a href="#ポートフォリオリターン" id="toc-ポートフォリオリターン" class="nav-link" data-scroll-target="#ポートフォリオリターン">ポートフォリオリターン</a></li>
   </ul></li>
+  <li><a href="#証券市場線sml" id="toc-証券市場線sml" class="nav-link" data-scroll-target="#証券市場線sml">証券市場線（SML）</a></li>
   <li><a href="#work-4" id="toc-work-4" class="nav-link" data-scroll-target="#work-4">Work 4</a>
   <ul>
   <li><a href="#問題1" id="toc-問題1" class="nav-link" data-scroll-target="#問題1">問題1</a>
@@ -290,6 +291,35 @@ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i
 <p><span class="math inline">\rho_{A,C}</span>はAとCの相関係数</p>
 <p>Cは安全資産の場合は</p>
 <p><span class="math display">\sigma_{p} = w_{A} \sigma_A</span></p>
+</section>
+</section>
+<section id="証券市場線sml" class="level2">
+<h2 class="anchored" data-anchor-id="証券市場線sml">証券市場線（SML）</h2>
+<p>市場の均衡において、CAPMの数式の中、<span class="math inline">\beta_i</span>はX軸、<span class="math inline">E(R_i)</span>はY軸の点は次の線の上にあるはず。</p>
+<p><span class="math display">
+E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
+</span></p>
+<ul>
+<li><span class="math inline">\beta = 0, E(R_i) = R_f</span>: リスクなしの時のリターンは無リスクの国債のリターンと同じはず</li>
+<li><span class="math inline">\beta = 1, E(R_i) = E(R_m)</span>: リスクは市場全体と同じの時、リターンも市場全体のリタ案と小名味のはず</li>
+</ul>
+<p>この式では：</p>
+<ul>
+<li><span class="math inline">E(R_i)</span>：資産 <span class="math inline">i</span> の<strong>期待リターン</strong></li>
+<li><span class="math inline">R_f</span>：<strong>リスクフリーレート</strong>（無リスク資産の利回り）</li>
+<li><span class="math inline">\beta_i</span>：資産 <span class="math inline">i</span> の<strong>ベータ値</strong>（市場全体に対する感応度）</li>
+<li><span class="math inline">E(R_m)</span>：<strong>市場ポートフォリオの期待リターン</strong></li>
+<li><span class="math inline">E(R_m) - R_f</span>：<strong>市場リスクプレミアム</strong></li>
+</ul>
+<p><span class="math display">
+\beta_i = \frac{\text{Cov}(R_i, R_M)}{\sigma_M^2}
+</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="homework_files/figure-html/f314be34-8b10-4651-a71b-07f91e671e7e-1-598d65cf-40b9-4d67-b2e3-9da31e558c45.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
 <div id="34cc406f-e25a-41f9-b823-138e9f55a853" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
@@ -389,7 +419,6 @@ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="work-4" class="level2">
 <h2 class="anchored" data-anchor-id="work-4">Work 4</h2>
