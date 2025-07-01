@@ -132,8 +132,21 @@ window.Quarto = {
   <li><a href="#標本標準偏差" id="toc-標本標準偏差" class="nav-link" data-scroll-target="#標本標準偏差">標本標準偏差</a></li>
   <li><a href="#相関係数" id="toc-相関係数" class="nav-link" data-scroll-target="#相関係数">相関係数</a></li>
   <li><a href="#ポートフォリオリターン" id="toc-ポートフォリオリターン" class="nav-link" data-scroll-target="#ポートフォリオリターン">ポートフォリオリターン</a></li>
-  </ul></li>
   <li><a href="#証券市場線sml" id="toc-証券市場線sml" class="nav-link" data-scroll-target="#証券市場線sml">証券市場線（SML）</a></li>
+  <li><a href="#資本市場線cml" id="toc-資本市場線cml" class="nav-link" data-scroll-target="#資本市場線cml">資本市場線(CML)</a></li>
+  <li><a href="#確率変数" id="toc-確率変数" class="nav-link" data-scroll-target="#確率変数">確率変数</a>
+  <ul class="collapse">
+  <li><a href="#確率変数とは" id="toc-確率変数とは" class="nav-link" data-scroll-target="#確率変数とは">🌟 確率変数とは？</a></li>
+  <li><a href="#たとえばサイコロの例" id="toc-たとえばサイコロの例" class="nav-link" data-scroll-target="#たとえばサイコロの例">🍀 たとえば：サイコロの例</a></li>
+  <li><a href="#ポイントをまとめると" id="toc-ポイントをまとめると" class="nav-link" data-scroll-target="#ポイントをまとめると">🎯 ポイントをまとめると：</a></li>
+  <li><a href="#前提" id="toc-前提" class="nav-link" data-scroll-target="#前提">✅ 前提</a></li>
+  <li><a href="#定数倍の平均と分散" id="toc-定数倍の平均と分散" class="nav-link" data-scroll-target="#定数倍の平均と分散">📌 1. 定数倍の平均と分散</a></li>
+  <li><a href="#和差の平均と分散独立な場合" id="toc-和差の平均と分散独立な場合" class="nav-link" data-scroll-target="#和差の平均と分散独立な場合">📌 2. 和・差の平均と分散（独立な場合）</a></li>
+  <li><a href="#和差の分散共分散がある場合" id="toc-和差の分散共分散がある場合" class="nav-link" data-scroll-target="#和差の分散共分散がある場合">📌 3. 和・差の分散（共分散がある場合）</a></li>
+  <li><a href="#x-a-の平均と分散" id="toc-x-a-の平均と分散" class="nav-link" data-scroll-target="#x-a-の平均と分散">✅ 4. <span class="math inline">X + a</span> の平均と分散</a></li>
+  <li><a href="#まとめ表" id="toc-まとめ表" class="nav-link" data-scroll-target="#まとめ表">📌 まとめ表</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#work-4" id="toc-work-4" class="nav-link" data-scroll-target="#work-4">Work 4</a>
   <ul>
   <li><a href="#問題1" id="toc-問題1" class="nav-link" data-scroll-target="#問題1">問題1</a>
@@ -292,9 +305,8 @@ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i
 <p>Cは安全資産の場合は</p>
 <p><span class="math display">\sigma_{p} = w_{A} \sigma_A</span></p>
 </section>
-</section>
-<section id="証券市場線sml" class="level2">
-<h2 class="anchored" data-anchor-id="証券市場線sml">証券市場線（SML）</h2>
+<section id="証券市場線sml" class="level3">
+<h3 class="anchored" data-anchor-id="証券市場線sml">証券市場線（SML）</h3>
 <p>市場の均衡において、CAPMの数式の中、<span class="math inline">\beta_i</span>はX軸、<span class="math inline">E(R_i)</span>はY軸の点は次の線の上にあるはず。</p>
 <p><span class="math display">
 E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
@@ -320,17 +332,305 @@ E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
 <figcaption>image.png</figcaption>
 </figure>
 </div>
-<div id="34cc406f-e25a-41f9-b823-138e9f55a853" class="cell" data-execution_count="13">
+<p>平均超過リターン: 資産の平均リターン値とリスクフリー資産のリターン値の差<span class="math inline">E(R_i) - r_f</span></p>
+<p><span class="math display">\text{Sharpe Ratio} = \frac{μ_i - r_f}{σ_i}</span></p>
+<p>市場と資産Aの相関係数と<span class="math inline">\beta_A</span>の関係：</p>
+<p><span class="math display">ρ_{MA} = \frac{β_A σ_M}{σ_A}</span></p>
+</section>
+<section id="資本市場線cml" class="level3">
+<h3 class="anchored" data-anchor-id="資本市場線cml">資本市場線(CML)</h3>
+<ul>
+<li>横軸：標準偏差<span class="math inline">σ_P</span>＝リスク</li>
+<li>縦軸：期待リターン<span class="math inline">E(R_P)</span></li>
+</ul>
+<p><span class="math display">E(R_P) = r_f + \frac{E(R_M) - r_f}{σ_M} \cdot σ_P</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>記号</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">E(R_P)</span></td>
+<td>ポートフォリオPの期待リターン</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">r_f</span></td>
+<td>リスクフリー資産の利回り</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">E(R_M)</span></td>
+<td>市場ポートフォリオの期待リターン</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">σ_M</span></td>
+<td>市場ポートフォリオの標準偏差（リスク）</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">σ_P</span></td>
+<td>ポートフォリオPの標準偏差（リスク）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>CML上の点はすべて「リスクとリターンのバランスが最適なポートフォリオ」です。</p></li>
+<li><p>投資家は、リスクを取りたくなければリスクフリー資産を多く、リターンを求めたければ市場ポートフォリオを多く持つことで、CML上のどの点にも投資できます。</p></li>
+<li><p>CMLの傾き（シャープレシオ）が大きいほど、「リスク1単位あたりのリターン」が大きく、効率的です。</p></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>特徴</th>
+<th>資本市場線（CML）</th>
+<th>証券市場線（SML）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>横軸</td>
+<td>標準偏差（σ）</td>
+<td>ベータ（β）</td>
+</tr>
+<tr class="even">
+<td>対象</td>
+<td>効率的なポートフォリオ</td>
+<td>すべての資産</td>
+</tr>
+<tr class="odd">
+<td>傾き</td>
+<td>シャープレシオ</td>
+<td>リスクプレミアム</td>
+</tr>
+<tr class="even">
+<td>意味</td>
+<td>投資家の最適な資産配分</td>
+<td>リスクに見合った資産のリターン</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="確率変数" class="level3">
+<h3 class="anchored" data-anchor-id="確率変数">確率変数</h3>
+<section id="確率変数とは" class="level4">
+<h4 class="anchored" data-anchor-id="確率変数とは">🌟 確率変数とは？</h4>
+<p>「結果に数字をつけるルール」のことです。</p>
+<hr>
+</section>
+<section id="たとえばサイコロの例" class="level4">
+<h4 class="anchored" data-anchor-id="たとえばサイコロの例">🍀 たとえば：サイコロの例</h4>
+<p>サイコロを1回ふると、出る目は「1〜6」のどれかですね。</p>
+<p>この「出る目の数字」は、偶然で決まりますよね。 このような「結果を数字で表したもの」を<strong>確率変数</strong>といいます。</p>
+<p>たとえば、</p>
+<ul>
+<li>サイコロをふって出る目 → 確率変数 <span class="math inline">X</span> と書くと <span class="math inline">X = 1, 2, 3, 4, 5, 6</span> のどれかになります。</li>
+</ul>
+<hr>
+</section>
+<section id="ポイントをまとめると" class="level4">
+<h4 class="anchored" data-anchor-id="ポイントをまとめると">🎯 ポイントをまとめると：</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>意味</td>
+<td>偶然によって決まる数（ルールで数にする）</td>
+</tr>
+<tr class="even">
+<td>例</td>
+<td>サイコロの目、コインの表裏（0と1で表す）</td>
+</tr>
+<tr class="odd">
+<td>使い方</td>
+<td>確率の計算、平均やばらつきなどを求めるときに使う</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="前提" class="level4">
+<h4 class="anchored" data-anchor-id="前提">✅ 前提</h4>
+<ul>
+<li><span class="math inline">X</span>は平均値=<span class="math inline">\mu_X</span>、分散=<span class="math inline">\sigma_X^2</span>の正規分布</li>
+<li><span class="math inline">Y</span>は平均値=<span class="math inline">\mu_Y</span>、分散=<span class="math inline">\sigma_Y^2</span>の正規分布</li>
+<li>定数 <span class="math inline">a, b</span>は実数</li>
+<li><span class="math inline">X</span> と <span class="math inline">Y</span> が<strong>独立</strong>または<strong>共分散</strong>が既知</li>
+</ul>
+<hr>
+</section>
+<section id="定数倍の平均と分散" class="level4">
+<h4 class="anchored" data-anchor-id="定数倍の平均と分散">📌 1. 定数倍の平均と分散</h4>
+<p><span class="math display">
+\begin{aligned}
+\text{期待値:} \quad &amp; \mathbb{E}[aX] = a \mathbb{E}[X] = a\mu_X \\
+\text{分散:} \quad &amp; \mathrm{Var}(aX) = a^2 \mathrm{Var}(X) = a^2 \sigma_X^2
+\end{aligned}
+</span></p>
+<hr>
+</section>
+<section id="和差の平均と分散独立な場合" class="level4">
+<h4 class="anchored" data-anchor-id="和差の平均と分散独立な場合">📌 2. 和・差の平均と分散（独立な場合）</h4>
+<p><span class="math display">
+Z = aX + bY
+</span></p>
+<p><span class="math display">
+\begin{aligned}
+\text{期待値:} \quad &amp; \mathbb{E}[Z] = a \mu_X + b \mu_Y \\
+\text{分散:} \quad &amp; \mathrm{Var}(Z) = a^2 \sigma_X^2 + b^2 \sigma_Y^2 \quad \text{（X, Y独立）}
+\end{aligned}
+</span></p>
+<hr>
+</section>
+<section id="和差の分散共分散がある場合" class="level4">
+<h4 class="anchored" data-anchor-id="和差の分散共分散がある場合">📌 3. 和・差の分散（共分散がある場合）</h4>
+<p><span class="math display">
+\text{Var}(aX + bY) = a^2 \sigma_X^2 + b^2 \sigma_Y^2 + 2ab \cdot \mathrm{Cov}(X, Y)
+</span></p>
+<hr>
+</section>
+<section id="x-a-の平均と分散" class="level4">
+<h4 class="anchored" data-anchor-id="x-a-の平均と分散">✅ 4. <span class="math inline">X + a</span> の平均と分散</h4>
+<p>期待値（平均）：</p>
+<p><span class="math display">
+\mathbb{E}[X + a] = \mathbb{E}[X] + a = \mu_X + a
+</span></p>
+<p>定数はそのまま足されます。</p>
+<p>分散：</p>
+<p><span class="math display">
+\mathrm{Var}(X + a) = \mathrm{Var}(X) = \sigma_X^2
+</span></p>
+<p>定数を足しても<strong>分散は変わりません！</strong></p>
+</section>
+<section id="まとめ表" class="level4">
+<h4 class="anchored" data-anchor-id="まとめ表">📌 まとめ表</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>式</th>
+<th>期待値</th>
+<th>分散</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">aX</span></td>
+<td><span class="math inline">a\mu_X</span></td>
+<td><span class="math inline">a^2\sigma_X^2</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">aX + bY</span>（独立）</td>
+<td><span class="math inline">a\mu_X + b\mu_Y</span></td>
+<td><span class="math inline">a^2\sigma_X^2 + b^2\sigma_Y^2</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">aX + bY</span>（非独立）</td>
+<td>同上</td>
+<td><span class="math inline">a^2\sigma_X^2 + b^2\sigma_Y^2 + 2ab\mathrm{Cov}(X, Y)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">X + a</span></td>
+<td><span class="math inline">\mu_X + a</span></td>
+<td><span class="math inline">\sigma_X^2</span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>必要であれば「共分散」や「相関係数との関係」も補足できます！</p>
+<div id="c10fc9b5-a725-4d14-81ea-0d2337756c0f" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> polars <span class="im">import</span> selectors <span class="im">as</span> cs</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">"MS Gothic"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.normal(<span class="dv">1</span>, <span class="dv">1</span>, n)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.random.normal(<span class="dv">3</span>, <span class="dv">2</span>, n)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'X=</span><span class="sc">{</span>X<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Y=</span><span class="sc">{</span>Y<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>X=[ 0.52851439 -1.19575114  2.81000169 ...  0.72990647  1.32177986
+ -0.07212412]
+Y=[1.83895118 1.42411663 1.87280859 ... 2.74401585 2.20653625 3.7429203 ]</code></pre>
+</div>
+</div>
+<div id="f0215018-a403-47f1-ba18-dcb9a5540632" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.mean(X), np.mean(<span class="fl">0.5</span> <span class="op">*</span> X), np.mean(<span class="fl">0.3</span> <span class="op">+</span> X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>(1.0059533495661372, 0.5029766747830686, 1.3059533495661375)</code></pre>
+</div>
+</div>
+<div id="f9069838-9cbb-4213-ad14-67664f88aba9" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.var(X), np.var(<span class="fl">0.5</span> <span class="op">*</span> X), np.var(<span class="fl">0.3</span> <span class="op">+</span> X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>(1.000053485595144, 0.250013371398786, 1.0000534855951437)</code></pre>
+</div>
+</div>
+<div id="da0814da-7016-470c-a9cb-351d72d878e9" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>np.mean(X), np.mean(Y), np.mean(X <span class="op">+</span> Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>(1.0059533495661372, 2.9974911969101283, 4.003444546476266)</code></pre>
+</div>
+</div>
+<div id="055b5d8a-89a8-45ab-a2e1-5a39d24c9f38" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.var(X), np.var(Y), np.var(X <span class="op">+</span> Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>(1.000053485595144, 4.07963632719435, 5.066336517415334)</code></pre>
+</div>
+</div>
+<div id="a783af5e-cbad-4f3a-a3c2-0e887e4dfc29" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(X, Y, s<span class="op">=</span><span class="dv">1</span>, marker<span class="op">=</span><span class="st">'s'</span>, alpha<span class="op">=</span><span class="fl">0.1</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="65a3589f-767c-45c2-824d-6661bad42ee8" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(X, Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>array([[1.        , 0.01132012],
+       [0.01132012, 1.        ]])</code></pre>
+</div>
+</div>
+<div id="e4b5b282-fde9-4181-9f04-41dc669ca641" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> Y <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="fl">1.0</span>, size<span class="op">=</span>n)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(Y, Z, s<span class="op">=</span><span class="dv">1</span>, marker<span class="op">=</span><span class="st">'s'</span>, alpha<span class="op">=</span><span class="fl">0.1</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="6f339dee-fa63-4350-a68b-3574066f9330" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(Y, Z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>array([[1.        , 0.70057886],
+       [0.70057886, 1.        ]])</code></pre>
+</div>
+</div>
+<div id="34cc406f-e25a-41f9-b823-138e9f55a853" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> polars <span class="im">import</span> selectors <span class="im">as</span> cs</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">"MS Gothic"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="a52d2e72-6650-4aee-9fa9-f552a16b0389" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'学籍番号_D.xlsm'</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pl.read_excel(file_path, sheet_name<span class="op">=</span><span class="st">'D'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'学籍番号_D.xlsm'</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pl.read_excel(file_path, sheet_name<span class="op">=</span><span class="st">'D'</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div><style>
 .dataframe > thead > tr,
@@ -420,6 +720,8 @@ E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
 </div>
 </div>
 </section>
+</section>
+</section>
 <section id="work-4" class="level2">
 <h2 class="anchored" data-anchor-id="work-4">Work 4</h2>
 <section id="問題1" class="level3">
@@ -432,39 +734,39 @@ E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
 <section id="解答" class="level4">
 <h4 class="anchored" data-anchor-id="解答">解答</h4>
 <div id="7568645d-5ec5-4084-a765-20742dc70058" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 期間フィルター</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> pl.datetime(<span class="dv">2015</span>, <span class="dv">3</span>, <span class="dv">31</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> pl.datetime(<span class="dv">2025</span>, <span class="dv">3</span>, <span class="dv">31</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">filter</span>((pl.col(<span class="st">"date"</span>) <span class="op">&gt;=</span> start_date) <span class="op">&amp;</span> (pl.col(<span class="st">"date"</span>) <span class="op">&lt;=</span> end_date))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> pl.exclude(<span class="st">'date'</span>, <span class="st">'Bond_Rate'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df_norm <span class="op">=</span> df.select(</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    cols <span class="op">/</span> cols.get(<span class="dv">0</span>),</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Bond_Rate'</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>col_names <span class="op">=</span> df_norm.select(cols).columns</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># グラフ描画</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> df_norm.get_column(<span class="st">"date"</span>).to_list()</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ticker <span class="kw">in</span> col_names:</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> df.get_column(ticker).to_list()</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    plt.plot(dates, y, label<span class="op">=</span>ticker)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"株価・TOPIXの推移（2015年3月末を1として正規化）"</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"年月"</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"正規化価格（2015/3/31 = 1）"</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 期間フィルター</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> pl.datetime(<span class="dv">2015</span>, <span class="dv">3</span>, <span class="dv">31</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> pl.datetime(<span class="dv">2025</span>, <span class="dv">3</span>, <span class="dv">31</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">filter</span>((pl.col(<span class="st">"date"</span>) <span class="op">&gt;=</span> start_date) <span class="op">&amp;</span> (pl.col(<span class="st">"date"</span>) <span class="op">&lt;=</span> end_date))</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> pl.exclude(<span class="st">'date'</span>, <span class="st">'Bond_Rate'</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>df_norm <span class="op">=</span> df.select(</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    cols <span class="op">/</span> cols.get(<span class="dv">0</span>),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Bond_Rate'</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>col_names <span class="op">=</span> df_norm.select(cols).columns</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># グラフ描画</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> df_norm.get_column(<span class="st">"date"</span>).to_list()</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ticker <span class="kw">in</span> col_names:</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> df.get_column(ticker).to_list()</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    plt.plot(dates, y, label<span class="op">=</span>ticker)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"株価・TOPIXの推移（2015年3月末を1として正規化）"</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"年月"</span>)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"正規化価格（2015/3/31 = 1）"</span>)</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="homework_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -487,37 +789,37 @@ E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
 <section id="解答-1" class="level4">
 <h4 class="anchored" data-anchor-id="解答-1">解答</h4>
 <div id="1d1834dd-b31d-4a15-b4f4-58f9177a6da3" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> cs.ends_with(<span class="st">".T"</span>) <span class="op">|</span> cs.by_name(<span class="st">'TOPIX'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>bond <span class="op">=</span> pl.col(<span class="st">'Bond_Rate'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df_return <span class="op">=</span> df.select(</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    ((cols <span class="op">/</span> cols.shift(<span class="dv">1</span>) <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">100</span>),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    bond,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ((((bond / 100) + 1).pow(1 / 12.0) - 1.0) * 100)</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>).drop_nulls()</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">4</span>, ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>), sharey<span class="op">=</span><span class="va">True</span>, sharex<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(df_return.columns[<span class="dv">1</span>:]):</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> axes[i]</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    ax.plot(df_return[<span class="st">'date'</span>], df_return[name], label<span class="op">=</span>name)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> 月次リターン(%)"</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">"リターン(%)"</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    ax.autoscale(tight<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 空のプロット（8個枠中、7個使用）</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="op">-</span><span class="dv">1</span>].axis(<span class="st">"off"</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"各銘柄・TOPIX・Bond_Rate の月次リターン(%)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> cs.ends_with(<span class="st">".T"</span>) <span class="op">|</span> cs.by_name(<span class="st">'TOPIX'</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>bond <span class="op">=</span> pl.col(<span class="st">'Bond_Rate'</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>df_return <span class="op">=</span> df.select(</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    ((cols <span class="op">/</span> cols.shift(<span class="dv">1</span>) <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">100</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    bond,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ((((bond / 100) + 1).pow(1 / 12.0) - 1.0) * 100)</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>).drop_nulls()</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">4</span>, ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>), sharey<span class="op">=</span><span class="va">True</span>, sharex<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(df_return.columns[<span class="dv">1</span>:]):</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> axes[i]</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    ax.plot(df_return[<span class="st">'date'</span>], df_return[name], label<span class="op">=</span>name)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> 月次リターン(%)"</span>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">"リターン(%)"</span>)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    ax.autoscale(tight<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 空のプロット（8個枠中、7個使用）</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="op">-</span><span class="dv">1</span>].axis(<span class="st">"off"</span>)</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"各銘柄・TOPIX・Bond_Rate の月次リターン(%)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="homework_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -538,24 +840,24 @@ E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
 <p>標本標準偏差は以下の式で求めます。</p>
 <p><span class="math display">s = \sqrt{\frac{1}{n - 1}\sum_{i = 1}^n {(x_i - \overline{x})^2}}</span></p>
 <div id="6b4a9ee5-a306-460d-bbec-e97ba7ba333d" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> pl.exclude(<span class="st">'date'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_summary <span class="op">=</span> df_return.select(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    cols.mean().name.suffix(<span class="st">"|mean"</span>),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    cols.std().name.suffix(<span class="st">"|std"</span>),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    cols.<span class="bu">max</span>().name.suffix(<span class="st">"|max"</span>),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    cols.<span class="bu">min</span>().name.suffix(<span class="st">"|min"</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    cols.count().name.suffix(<span class="st">"|count"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    df_summary</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    .transpose(include_header<span class="op">=</span><span class="va">True</span>, header_name<span class="op">=</span><span class="st">'name'</span>, column_names<span class="op">=</span>[<span class="st">'value'</span>])</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    .with_columns(</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'name'</span>).<span class="bu">str</span>.split(<span class="st">"|"</span>).<span class="bu">list</span>.get(<span class="dv">0</span>).alias(<span class="st">'name'</span>),</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'name'</span>).<span class="bu">str</span>.split(<span class="st">"|"</span>).<span class="bu">list</span>.get(<span class="dv">1</span>).alias(<span class="st">'stats'</span>),</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    .pivot(on<span class="op">=</span><span class="st">'name'</span>, index<span class="op">=</span><span class="st">'stats'</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> pl.exclude(<span class="st">'date'</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df_summary <span class="op">=</span> df_return.select(</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    cols.mean().name.suffix(<span class="st">"|mean"</span>),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    cols.std().name.suffix(<span class="st">"|std"</span>),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    cols.<span class="bu">max</span>().name.suffix(<span class="st">"|max"</span>),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    cols.<span class="bu">min</span>().name.suffix(<span class="st">"|min"</span>),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    cols.count().name.suffix(<span class="st">"|count"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    df_summary</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    .transpose(include_header<span class="op">=</span><span class="va">True</span>, header_name<span class="op">=</span><span class="st">'name'</span>, column_names<span class="op">=</span>[<span class="st">'value'</span>])</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    .with_columns(</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'name'</span>).<span class="bu">str</span>.split(<span class="st">"|"</span>).<span class="bu">list</span>.get(<span class="dv">0</span>).alias(<span class="st">'name'</span>),</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'name'</span>).<span class="bu">str</span>.split(<span class="st">"|"</span>).<span class="bu">list</span>.get(<span class="dv">1</span>).alias(<span class="st">'stats'</span>),</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    .pivot(on<span class="op">=</span><span class="st">'name'</span>, index<span class="op">=</span><span class="st">'stats'</span>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div><style>
 .dataframe > thead > tr,
@@ -658,9 +960,9 @@ E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
 <section id="解答-3" class="level4">
 <h4 class="anchored" data-anchor-id="解答-3">解答</h4>
 <div id="9a1b483e-dc45-43c6-a748-ceb2d2ff160c" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_return.select(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(cs.ends_with(<span class="st">'.T'</span>), <span class="st">'TOPIX'</span>, method<span class="op">=</span><span class="st">'pearson'</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df_return.select(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(cs.ends_with(<span class="st">'.T'</span>), <span class="st">'TOPIX'</span>, method<span class="op">=</span><span class="st">'pearson'</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div><style>
 .dataframe > thead > tr,
@@ -704,9 +1006,9 @@ E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
 <li>(4)と同様に，各銘柄の株価の月次リターン(%)と10年国債利回り(%)との標本相関係数を計算しなさい。</li>
 </ol>
 <div id="95cda946-33db-4318-971f-ae610656990e" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_return.select(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(cs.ends_with(<span class="st">'.T'</span>), <span class="st">'Bond_Rate'</span>, method<span class="op">=</span><span class="st">'pearson'</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df_return.select(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(cs.ends_with(<span class="st">'.T'</span>), <span class="st">'Bond_Rate'</span>, method<span class="op">=</span><span class="st">'pearson'</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div><style>
 .dataframe > thead > tr,
@@ -1022,24 +1324,24 @@ w = \frac{0.035 - 0.01}{20 \times (0.047)^{2}} = \frac{0.025}{20 \times 0.002209
 <li><p>各銘柄の重みは 0.2（20%）で同じ</p></li>
 </ul>
 <div id="55781f47-c6b4-4144-b6f5-061faae3a6d8" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"1928.T"</span>, <span class="st">"3046.T"</span>, <span class="st">"3402.T"</span>, <span class="st">"4523.T"</span>, <span class="st">"6869.T"</span>]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_ret <span class="op">=</span> df.select(</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    pl.mean_horizontal([pl.col(col) <span class="op">/</span> pl.col(col).shift(<span class="dv">1</span>) <span class="op">-</span> <span class="dv">1</span> <span class="cf">for</span> col <span class="kw">in</span> cols]).alias(<span class="st">'Portfolio_ret'</span>),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    (pl.col(<span class="st">'TOPIX'</span>) <span class="op">/</span> pl.col(<span class="st">'TOPIX'</span>).shift(<span class="dv">1</span>) <span class="op">-</span> <span class="dv">1</span>).alias(<span class="st">'TOPIX_ret'</span>),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Bond_Rate'</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>).drop_nulls()</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ax.plot(df_ret[<span class="st">'date'</span>], df_ret[<span class="st">'Portfolio_ret'</span>] <span class="op">*</span> <span class="dv">100</span>)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"ポートフォリオのリターン"</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"リターン(%)"</span>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>ax.autoscale(tight<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">30</span>, <span class="dv">50</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"1928.T"</span>, <span class="st">"3046.T"</span>, <span class="st">"3402.T"</span>, <span class="st">"4523.T"</span>, <span class="st">"6869.T"</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df_ret <span class="op">=</span> df.select(</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    pl.mean_horizontal([pl.col(col) <span class="op">/</span> pl.col(col).shift(<span class="dv">1</span>) <span class="op">-</span> <span class="dv">1</span> <span class="cf">for</span> col <span class="kw">in</span> cols]).alias(<span class="st">'Portfolio_ret'</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    (pl.col(<span class="st">'TOPIX'</span>) <span class="op">/</span> pl.col(<span class="st">'TOPIX'</span>).shift(<span class="dv">1</span>) <span class="op">-</span> <span class="dv">1</span>).alias(<span class="st">'TOPIX_ret'</span>),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Bond_Rate'</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>).drop_nulls()</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>ax.plot(df_ret[<span class="st">'date'</span>], df_ret[<span class="st">'Portfolio_ret'</span>] <span class="op">*</span> <span class="dv">100</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"ポートフォリオのリターン"</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"リターン(%)"</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>ax.autoscale(tight<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">30</span>, <span class="dv">50</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="homework_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1048,15 +1350,15 @@ w = \frac{0.035 - 0.01}{20 \times (0.047)^{2}} = \frac{0.025}{20 \times 0.002209
 <li>標本平均，標本標準偏差，最大値，最小値，標本数</li>
 </ol>
 <div id="485c1ecc-de75-4d19-a1a9-308c88c0d87c" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> pl.col(<span class="st">"Portfolio_ret"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> df_ret.select([</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    col.mean().alias(<span class="st">"mean"</span>),</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    col.std().alias(<span class="st">"std"</span>),</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    col.<span class="bu">max</span>().alias(<span class="st">"max"</span>),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    col.<span class="bu">min</span>().alias(<span class="st">"min"</span>),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    col.count().alias(<span class="st">"count"</span>),</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> pl.col(<span class="st">"Portfolio_ret"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> df_ret.select([</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    col.mean().alias(<span class="st">"mean"</span>),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    col.std().alias(<span class="st">"std"</span>),</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    col.<span class="bu">max</span>().alias(<span class="st">"max"</span>),</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    col.<span class="bu">min</span>().alias(<span class="st">"min"</span>),</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    col.count().alias(<span class="st">"count"</span>),</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div><style>
 .dataframe > thead > tr,
@@ -1100,10 +1402,10 @@ w = \frac{0.035 - 0.01}{20 \times (0.047)^{2}} = \frac{0.025}{20 \times 0.002209
 <p>標本相関係数 <span class="math inline">r</span> の式：</p>
 <p><span class="math display">r = \frac{\sum(x_{i} - \bar{x})(y_{i} - \bar{y})}{\sqrt{\sum(x_{i} - \bar{x})^{2}}\sqrt{\sum(y_{i} - \bar{y})^{2}}}</span></p>
 <div id="84bc9989-78c3-4b17-939c-caa1c1492df8" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>corr_topix <span class="op">=</span> df_ret.select(</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(<span class="st">"Portfolio_ret"</span>, <span class="st">"TOPIX_ret"</span>,).alias(<span class="st">"corr_with_TOPIX"</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>corr_topix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>corr_topix <span class="op">=</span> df_ret.select(</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(<span class="st">"Portfolio_ret"</span>, <span class="st">"TOPIX_ret"</span>,).alias(<span class="st">"corr_with_TOPIX"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>corr_topix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div><style>
 .dataframe > thead > tr,
@@ -1132,10 +1434,10 @@ w = \frac{0.035 - 0.01}{20 \times (0.047)^{2}} = \frac{0.025}{20 \times 0.002209
 </div>
 </div>
 <div id="c502a452-9a14-4fc7-b5af-9a02bdd9ae27" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>corr_bond <span class="op">=</span> df_ret.select(</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(<span class="st">"Portfolio_ret"</span>, <span class="st">"Bond_Rate"</span>).alias(<span class="st">"corr_with_Bond"</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>corr_bond</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>corr_bond <span class="op">=</span> df_ret.select(</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    pl.corr(<span class="st">"Portfolio_ret"</span>, <span class="st">"Bond_Rate"</span>).alias(<span class="st">"corr_with_Bond"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>corr_bond</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div><style>
 .dataframe > thead > tr,
@@ -1431,77 +1733,77 @@ w = \frac{0.035 - 0.01}{20 \times (0.047)^{2}} = \frac{0.025}{20 \times 0.002209
 <p>1928.Tは最も大きな正のアルファを示しているが、p値によって有意ではなく、実際の超過リターンとしての信頼性は限定的である。</p>
 <p>一方、4523.Tは最も負のアルファを示しており、これは市場平均をかなり下回るリターンの傾向を示している。ただし、こちらもp値は有意ではない。</p>
 <div id="fc9a3153-3a60-4d27-8cc3-5ecd680aa2da" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pl.read_excel(file_path, sheet_name<span class="op">=</span><span class="st">"D"</span>).to_pandas()</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 銘柄名</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>tickers <span class="op">=</span> [<span class="st">"1928.T"</span>, <span class="st">"3046.T"</span>, <span class="st">"3402.T"</span>, <span class="st">"4523.T"</span>, <span class="st">"6869.T"</span>]</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 対数リターンの計算</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>price_cols <span class="op">=</span> tickers <span class="op">+</span> [<span class="st">"TOPIX"</span>]</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> np.log(df[price_cols] <span class="op">/</span> df[price_cols].shift(<span class="dv">1</span>))</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 年率 → 月率リスクフリーレートに変換（複利）</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> ((<span class="dv">1</span> <span class="op">+</span> df[<span class="st">"Bond_Rate"</span>] <span class="op">/</span> <span class="dv">100</span>) <span class="op">**</span> (<span class="dv">1</span> <span class="op">/</span> <span class="dv">12</span>) <span class="op">-</span> <span class="dv">1</span>).shift(<span class="dv">1</span>)  <span class="co"># 同期のために1つずらす</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 超過リターン</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>excess_market <span class="op">=</span> returns[<span class="st">"TOPIX"</span>] <span class="op">-</span> rf</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># グラフ用設定</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">12</span>))</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 回帰分析結果保存用</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, ticker <span class="kw">in</span> <span class="bu">enumerate</span>(tickers):</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    excess_stock <span class="op">=</span> returns[ticker] <span class="op">-</span> rf</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> sm.add_constant(excess_market)</span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> excess_stock</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> sm.OLS(y.dropna(), X.loc[y.dropna().index])</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> model.fit()</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    results[ticker] <span class="op">=</span> res</span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 回帰プロット</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>    sns.regplot(</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>excess_market, y<span class="op">=</span>excess_stock, ax<span class="op">=</span>axes[i],</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>        line_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"red"</span>}, scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">20</span>}</span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"</span><span class="sc">{</span>ticker<span class="sc">}</span><span class="ss"> | α=</span><span class="sc">{</span>res<span class="sc">.</span>params[<span class="st">'const'</span>]<span class="sc">:.4%}</span><span class="ss">, β=</span><span class="sc">{</span>res<span class="sc">.</span>params[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss">"</span>,</span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">12</span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>    axes[i].set_xlabel(<span class="st">"Excess Market Return"</span>)</span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    axes[i].set_ylabel(<span class="st">"Excess Stock Return"</span>)</span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>axes[<span class="op">-</span><span class="dv">1</span>].axis(<span class="st">"off"</span>)  <span class="co"># 最後のサブプロットは空白に</span></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pl.read_excel(file_path, sheet_name<span class="op">=</span><span class="st">"D"</span>).to_pandas()</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 銘柄名</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>tickers <span class="op">=</span> [<span class="st">"1928.T"</span>, <span class="st">"3046.T"</span>, <span class="st">"3402.T"</span>, <span class="st">"4523.T"</span>, <span class="st">"6869.T"</span>]</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 対数リターンの計算</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>price_cols <span class="op">=</span> tickers <span class="op">+</span> [<span class="st">"TOPIX"</span>]</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> np.log(df[price_cols] <span class="op">/</span> df[price_cols].shift(<span class="dv">1</span>))</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 年率 → 月率リスクフリーレートに変換（複利）</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> ((<span class="dv">1</span> <span class="op">+</span> df[<span class="st">"Bond_Rate"</span>] <span class="op">/</span> <span class="dv">100</span>) <span class="op">**</span> (<span class="dv">1</span> <span class="op">/</span> <span class="dv">12</span>) <span class="op">-</span> <span class="dv">1</span>).shift(<span class="dv">1</span>)  <span class="co"># 同期のために1つずらす</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 超過リターン</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>excess_market <span class="op">=</span> returns[<span class="st">"TOPIX"</span>] <span class="op">-</span> rf</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># グラフ用設定</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">12</span>))</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 回帰分析結果保存用</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, ticker <span class="kw">in</span> <span class="bu">enumerate</span>(tickers):</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>    excess_stock <span class="op">=</span> returns[ticker] <span class="op">-</span> rf</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> sm.add_constant(excess_market)</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> excess_stock</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> sm.OLS(y.dropna(), X.loc[y.dropna().index])</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> model.fit()</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>    results[ticker] <span class="op">=</span> res</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 回帰プロット</span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>    sns.regplot(</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>excess_market, y<span class="op">=</span>excess_stock, ax<span class="op">=</span>axes[i],</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>        line_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"red"</span>}, scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">20</span>}</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"</span><span class="sc">{</span>ticker<span class="sc">}</span><span class="ss"> | α=</span><span class="sc">{</span>res<span class="sc">.</span>params[<span class="st">'const'</span>]<span class="sc">:.4%}</span><span class="ss">, β=</span><span class="sc">{</span>res<span class="sc">.</span>params[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss">"</span>,</span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">12</span></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>    axes[i].set_xlabel(<span class="st">"Excess Market Return"</span>)</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>    axes[i].set_ylabel(<span class="st">"Excess Stock Return"</span>)</span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>axes[<span class="op">-</span><span class="dv">1</span>].axis(<span class="st">"off"</span>)  <span class="co"># 最後のサブプロットは空白に</span></span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="homework_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <div id="feac6878-4787-41d0-b17d-31182da5575a" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ticker, res <span class="kw">in</span> results.items():</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> res.params[<span class="st">'const'</span>]</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    beta <span class="op">=</span> res.params[<span class="dv">0</span>]</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    t_alpha <span class="op">=</span> res.tvalues[<span class="st">'const'</span>]</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    p_alpha <span class="op">=</span> res.pvalues[<span class="st">'const'</span>]</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    significance <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p_alpha <span class="op">&lt;</span> <span class="fl">0.01</span>:</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        significance <span class="op">=</span> <span class="st">"*** (1</span><span class="sc">% le</span><span class="st">vel)"</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> p_alpha <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        significance <span class="op">=</span> <span class="st">"** (5</span><span class="sc">% le</span><span class="st">vel)"</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> p_alpha <span class="op">&lt;</span> <span class="fl">0.1</span>:</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        significance <span class="op">=</span> <span class="st">"* (10</span><span class="sc">% le</span><span class="st">vel)"</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>ticker<span class="sc">}</span><span class="ss">: α = </span><span class="sc">{</span>alpha<span class="sc">:.4%}</span><span class="ss">, t = </span><span class="sc">{</span>t_alpha<span class="sc">:.2f}</span><span class="ss">, p = </span><span class="sc">{</span>p_alpha<span class="sc">:.3f}</span><span class="ss"> </span><span class="sc">{</span>significance<span class="sc">}</span><span class="ss"> beta=</span><span class="sc">{</span>beta<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ticker, res <span class="kw">in</span> results.items():</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> res.params[<span class="st">'const'</span>]</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    beta <span class="op">=</span> res.params[<span class="dv">0</span>]</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    t_alpha <span class="op">=</span> res.tvalues[<span class="st">'const'</span>]</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    p_alpha <span class="op">=</span> res.pvalues[<span class="st">'const'</span>]</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    significance <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p_alpha <span class="op">&lt;</span> <span class="fl">0.01</span>:</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        significance <span class="op">=</span> <span class="st">"*** (1</span><span class="sc">% le</span><span class="st">vel)"</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> p_alpha <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        significance <span class="op">=</span> <span class="st">"** (5</span><span class="sc">% le</span><span class="st">vel)"</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> p_alpha <span class="op">&lt;</span> <span class="fl">0.1</span>:</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>        significance <span class="op">=</span> <span class="st">"* (10</span><span class="sc">% le</span><span class="st">vel)"</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>ticker<span class="sc">}</span><span class="ss">: α = </span><span class="sc">{</span>alpha<span class="sc">:.4%}</span><span class="ss">, t = </span><span class="sc">{</span>t_alpha<span class="sc">:.2f}</span><span class="ss">, p = </span><span class="sc">{</span>p_alpha<span class="sc">:.3f}</span><span class="ss"> </span><span class="sc">{</span>significance<span class="sc">}</span><span class="ss"> beta=</span><span class="sc">{</span>beta<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1928.T: α = 0.4713%, t = 1.19, p = 0.236  beta=0.8232
 3046.T: α = 0.3913%, t = 0.42, p = 0.678  beta=0.1739
@@ -1529,61 +1831,61 @@ w = \frac{0.035 - 0.01}{20 \times (0.047)^{2}} = \frac{0.025}{20 \times 0.002209
 <p>アルファが負の値を示していることから、このポートフォリオは市場平均をわずかに下回る超過リターンを示していると解釈される。ただし、その値は非常に小さく、実務上は無視できる程度である。</p>
 <p>また、p値が非常に高いため、統計的に有意とは言えない。したがって、アルファが正であれ負であれ、いずれも偶然の変動の範囲内にあると判断される。</p>
 <div id="7a180a0b-a822-431b-a9f4-6a563a852602" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">"MS Gothic"</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 株式コード</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>stocks <span class="op">=</span> [<span class="st">'1928.T'</span>, <span class="st">'3046.T'</span>, <span class="st">'3402.T'</span>, <span class="st">'4523.T'</span>, <span class="st">'6869.T'</span>]</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 対数リターンの計算</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> np.log(df[stocks] <span class="op">/</span> df[stocks].shift(<span class="dv">1</span>)).dropna()</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 市場リターン（TOPIX）</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>Rm <span class="op">=</span> np.log(df[<span class="st">'TOPIX'</span>] <span class="op">/</span> df[<span class="st">'TOPIX'</span>].shift(<span class="dv">1</span>)).dropna()</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># リスクフリーレートの年率を月次へ変換</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>Rf <span class="op">=</span> ((<span class="dv">1</span> <span class="op">+</span> df[<span class="st">"Bond_Rate"</span>] <span class="op">/</span> <span class="dv">100</span>) <span class="op">**</span> (<span class="dv">1</span> <span class="op">/</span> <span class="dv">12</span>) <span class="op">-</span> <span class="dv">1</span>).shift(<span class="dv">1</span>).dropna()  <span class="co"># 同期のために1つずらす</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co"># リターン系列揃える</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co"># returns, Rm, Rf = returns.align(Rm, join='inner'), Rm.align(Rf, join='inner')[0], Rf.align(Rm, join='inner')[0]</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ポートフォリオの等ウェイトリターン</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>Rp <span class="op">=</span> returns.mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 超過リターンの計算</span></span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>Rp_excess <span class="op">=</span> Rp <span class="op">-</span> Rf</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>Rm_excess <span class="op">=</span> Rm <span class="op">-</span> Rf</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 回帰分析（αとβの推定）</span></span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(Rm_excess)</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(Rp_excess, X).fit()</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 結果の出力</span></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> model.params[<span class="st">'const'</span>]</span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> model.params[<span class="dv">0</span>]</span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>p_value_alpha <span class="op">=</span> model.pvalues[<span class="st">'const'</span>]</span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>r_squared <span class="op">=</span> model.rsquared</span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"α = </span><span class="sc">{</span>alpha<span class="sc">:.4%}</span><span class="ss">, β = </span><span class="sc">{</span>beta<span class="sc">:.3f}</span><span class="ss">, p値(α) = </span><span class="sc">{</span>p_value_alpha<span class="sc">:.3f}</span><span class="ss">, R² = </span><span class="sc">{</span>r_squared<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a><span class="co"># グラフ描画</span></span>
-<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>plt.scatter(Rm_excess, Rp_excess, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'超過リターン'</span>)</span>
-<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>plt.plot(Rm_excess, model.fittedvalues, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'CAPM 回帰直線'</span>)</span>
-<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"市場超過リターン $(R_m - R_f)$"</span>)</span>
-<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"ポートフォリオ超過リターン ($R_p - R_f$)"</span>)</span>
-<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"CAPM によるポートフォリオの回帰分析"</span>)</span>
-<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">"MS Gothic"</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 株式コード</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>stocks <span class="op">=</span> [<span class="st">'1928.T'</span>, <span class="st">'3046.T'</span>, <span class="st">'3402.T'</span>, <span class="st">'4523.T'</span>, <span class="st">'6869.T'</span>]</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 対数リターンの計算</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> np.log(df[stocks] <span class="op">/</span> df[stocks].shift(<span class="dv">1</span>)).dropna()</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 市場リターン（TOPIX）</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>Rm <span class="op">=</span> np.log(df[<span class="st">'TOPIX'</span>] <span class="op">/</span> df[<span class="st">'TOPIX'</span>].shift(<span class="dv">1</span>)).dropna()</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co"># リスクフリーレートの年率を月次へ変換</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>Rf <span class="op">=</span> ((<span class="dv">1</span> <span class="op">+</span> df[<span class="st">"Bond_Rate"</span>] <span class="op">/</span> <span class="dv">100</span>) <span class="op">**</span> (<span class="dv">1</span> <span class="op">/</span> <span class="dv">12</span>) <span class="op">-</span> <span class="dv">1</span>).shift(<span class="dv">1</span>).dropna()  <span class="co"># 同期のために1つずらす</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co"># リターン系列揃える</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co"># returns, Rm, Rf = returns.align(Rm, join='inner'), Rm.align(Rf, join='inner')[0], Rf.align(Rm, join='inner')[0]</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ポートフォリオの等ウェイトリターン</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>Rp <span class="op">=</span> returns.mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 超過リターンの計算</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>Rp_excess <span class="op">=</span> Rp <span class="op">-</span> Rf</span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>Rm_excess <span class="op">=</span> Rm <span class="op">-</span> Rf</span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 回帰分析（αとβの推定）</span></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(Rm_excess)</span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(Rp_excess, X).fit()</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 結果の出力</span></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> model.params[<span class="st">'const'</span>]</span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> model.params[<span class="dv">0</span>]</span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>p_value_alpha <span class="op">=</span> model.pvalues[<span class="st">'const'</span>]</span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>r_squared <span class="op">=</span> model.rsquared</span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"α = </span><span class="sc">{</span>alpha<span class="sc">:.4%}</span><span class="ss">, β = </span><span class="sc">{</span>beta<span class="sc">:.3f}</span><span class="ss">, p値(α) = </span><span class="sc">{</span>p_value_alpha<span class="sc">:.3f}</span><span class="ss">, R² = </span><span class="sc">{</span>r_squared<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="co"># グラフ描画</span></span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>plt.scatter(Rm_excess, Rp_excess, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'超過リターン'</span>)</span>
+<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a>plt.plot(Rm_excess, model.fittedvalues, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'CAPM 回帰直線'</span>)</span>
+<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"市場超過リターン $(R_m - R_f)$"</span>)</span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"ポートフォリオ超過リターン ($R_p - R_f$)"</span>)</span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"CAPM によるポートフォリオの回帰分析"</span>)</span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>α = -0.0571%, β = 0.715, p値(α) = 0.869, R² = 0.393</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_files/figure-html/cell-15-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="homework_files/figure-html/cell-24-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
