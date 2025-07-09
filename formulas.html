@@ -88,9 +88,9 @@ window.Quarto = {
 <li><span class="math inline">\(k\)</span>: 要求収益率</li>
 <li><span class="math inline">\(C_i\)</span>: i年目の収入</li>
 </ul>
-<p><span class="math display">\[PV = \frac{C_1}{1 + k} + \frac{C_2}{1 + k} + ...\]</span></p>
+<p><span class="math display">\[PV = \frac{C_1}{1 + k} + \frac{C_2}{(1 + k)^2} + ...\]</span></p>
 <p>毎年固定収入の場合は</p>
-<p><span class="math display">\[PV = \frac{C}{1 + k} + \frac{C}{1 + k} + ... = \frac{C}{k}\]</span></p>
+<p><span class="math display">\[PV = \frac{C}{1 + k} + \frac{C}{(1 + k)^2} + ... = \frac{C}{k}\]</span></p>
 <p>企業価値 = 負債価値 + 株式価値</p>
 <p>株価純資産倍率(BR) = 株式価値 ÷ 株主資本</p>
 <p>資本費用 = 企業価値 × 要求収益率</p>
@@ -105,7 +105,9 @@ window.Quarto = {
 <li><span class="math inline">\(\text{corr}_{iM}\)</span>: <span class="math inline">\(i\)</span>と<span class="math inline">\(M\)</span>の相関係数</li>
 </ul>
 <p><span class="math inline">\(i\)</span>のリスクプレミアム<span class="math inline">\(\pi_i\)</span></p>
-<p><span class="math display">\[\pi_i = (r_M - r_f) \beta_i\]</span> <span class="math display">\[r_i = r_f + \pi_i = r_f + (r_M - r_f) \beta_i\]</span></p>
+<p><span class="math display">\[\pi_i = (r_M - r_f) \beta_i\]</span></p>
+<p>要求収益率<span class="math inline">\(r_i\)</span>:</p>
+<p><span class="math display">\[r_i = r_f + \pi_i = r_f + (r_M - r_f) \beta_i\]</span></p>
 <p>企業価値<span class="math inline">\(V\)</span></p>
 <p><span class="math display">\[ V = \frac{\text{FCF}_1}{1 + k} + \frac{\text{FCF}_2}{(1 + k)^2} + ...\]</span></p>
 
